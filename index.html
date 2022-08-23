@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
     <!-- Header Section  -->
    <section class="bg-black pt-10 pb-10 text-center">
     <header>
@@ -22,6 +23,7 @@
     </header>
    </section>
     <!-- player Section  -->
+    
     <section class="pt-10 pb-10 mx-auto bg-stone-900">
         <div class="flex flex-row">
             <div class="basis-9/12 grid grid-cols-3">
@@ -35,9 +37,9 @@
                         <div><p>65 Goals</p></div>
                         <div><p>96 Asisst</p></div>
                       </div>
-                      <div class="card-actions">
-                        <button class="btn btn-secondary px-20" onclick="selectPlayer(this)">SELECT</button>
-                      </div>
+                      
+                        <button class="btn btn-secondary px-20" onclick="getPlayerName(event)">SELECT</button>
+
                     </div>
                 </div>
                 <div class="card w-100 bg-base-100 shadow-xl m-5">
@@ -50,9 +52,7 @@
                         <div><p>46 Goals</p></div>
                         <div><p>89 Asisst</p></div>
                       </div>
-                      <div class="card-actions">
-                        <button class="btn btn-secondary px-20" onclick="selectPlayer(this)">SELECT</button>
-                      </div>
+                        <button class="btn btn-secondary px-20" onclick="getPlayerName(event)">SELECT</button>
                     </div>
                 </div>
                 <div class="card w-100 bg-base-100 shadow-xl m-5">
@@ -65,9 +65,7 @@
                         <div><p>43 Goals</p></div>
                         <div><p>61 Asisst</p></div>
                       </div>
-                      <div class="card-actions">
-                        <button class="btn btn-secondary px-20" onclick="selectPlayer(this)">SELECT</button>
-                      </div>
+                        <button class="btn btn-secondary px-20" onclick="getPlayerName(event)">SELECT</button>
                     </div>
                 </div>
                 <div class="card w-100 bg-base-100 shadow-xl m-5">
@@ -80,9 +78,7 @@
                         <div><p>61 Goals</p></div>
                         <div><p>66 Asisst</p></div>
                       </div>
-                      <div class="card-actions">
-                        <button class="btn btn-secondary px-20" onclick="selectPlayer(this)">SELECT</button>
-                      </div>
+                        <button class="btn btn-secondary px-20" onclick="getPlayerName(event)">SELECT</button>
                     </div>
                 </div>
                 <div class="card w-100 bg-base-100 shadow-xl m-5">
@@ -95,9 +91,7 @@
                         <div><p>49 Goals</p></div>
                         <div><p>77 Asisst</p></div>
                       </div>
-                      <div class="card-actions">
-                        <button class="btn btn-secondary px-20" onclick="selectPlayer(this)">SELECT</button>
-                      </div>
+                        <button class="btn btn-secondary px-20" onclick="getPlayerName(event)">SELECT</button>
                     </div>
                 </div>
                 <div class="card w-100 bg-base-100 shadow-xl m-5">
@@ -110,38 +104,39 @@
                         <div><p>53 Goals</p></div>
                         <div><p>63 Asisst</p></div>
                       </div>
-                      <div class="card-actions">
-                        <button class="btn btn-secondary px-20" onclick="selectPlayer(this)">SELECT</button>
-                      </div>
+                        <button class="btn btn-secondary px-20" onclick="getPlayerName(event)">SELECT</button>
                     </div>
                 </div>
             </div>
             <div class="mt-5 ml-8">
                <div class="bg-black p-20 rounded-lg mb-10">
                 <h3 class="text-2xl ">Selected Players</h3>
-                 <ol id="player">
-
+                 <ol id="selected-player">
+                  
                  </ol>
                </div>
+
+       <!-- calculation section  -->
                <div class="mt-5 bg-black rounded-lg mb-10 p-5">
                 <h3 class="text-3xl text-center">Budget</h3>
-                <p class="py-3">Per Player <input class="py-1 rounded-lg ml-2" type="text" name="" id=""></p>
+                <p class="py-3">Per Player <input class="py-1 rounded-lg ml-2" type="text" name="" id="player-budget"></p>
                 <div class="text-center py-3">
-                    <button class="btn btn-secondary px-20">Calculate</button>
+                    <button id="player-calculate" class="btn btn-secondary px-20">Calculate</button>
                 </div>
-                <p class="py-3">Player Expenses$<span>5000</span></p>
-                <p class="py-3">Manager<input class="py-1 rounded-lg ml-4" type="text" name="" id=""></p>
-                <p class="py-3">Coach<input class="py-1 rounded-lg ml-8" type="text" name="" id=""></p>
+                <p class="py-3">Player Expenses$<span id="total-player-budget">00</span></p>
+                <p class="py-3">Manager<input class="py-1 rounded-lg ml-4" type="text" name="" id="manager"></p>
+                <p class="py-3">Coach<input class="py-1 rounded-lg ml-8" type="text" name="" id="coach"></p>
                 <div class="text-center py-3">
-                    <button class="btn btn-secondary px-20">Calculate Total</button>
+                    <button id="total-calculate" class="btn btn-secondary px-20">Calculate Total</button>
                 </div>
-                <p class="text-xl mt-3 mb-10">Total<span class="ml-40  text-red-600">11000</span></p>
+                <p class="text-xl mt-3 mb-10">Total<span id="total" class="ml-40  text-red-600">11000</span></p>
                </div>
             </div>
         </div>
     </section>
 
-    <!-- JsFile -->
+    <!-- JsFiles -->
     <script src="js/player.js"></script>
+    <script src="js/calculation.js"></script>
 </body>
 </html>
